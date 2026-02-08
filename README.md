@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ScheduleMeetingNextjs
 
-## Getting Started
+A simple scheduler built with **Next.js 16 (App Router)**, **Tailwind CSS v5**, and **Chadcn UI**. The project demonstrates dynamic pages driven by a unified data source (slug-based routing), server/client components, and typical build/dev workflows.
 
-First, run the development server:
+## Project overview
+
+This repository contains a meeting scheduler example. It shows how to:
+
+* Use the Next.js 16 App Router.
+* Model pages dynamically using a **single, unified data source** (for example, `data/meetings.ts` or `lib/content.ts`).
+* Style with Tailwind CSS v5 and use Chadcn UI components.
+* Implement server-side rendering, static generation, or incremental rendering around slug routes.
+
+The aim is to keep the content and routing simple so you can focus on integrating backend APIs, auth, or a database later.
+
+## Features
+
+* Slug-based dynamic pages for meetings (e.g. `/meetings/team-sync`).
+* Centralized data store for pages (JSON/TS file or headless CMS).
+* Example components using Chadcn UI and Tailwind.
+* Ready-to-run dev & production scripts.
+
+## Tech stack
+
+* Next.js 16 (App Router)
+* TypeScript
+* Tailwind CSS v5
+* Chadcn UI (shadcn-compatible components)
+
+## Prerequisites
+
+* Node.js 18 or newer
+* npm
+
+## Getting started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# opens at http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+(Optional) Build for production:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+"# Appointment-App-NextJs" 
