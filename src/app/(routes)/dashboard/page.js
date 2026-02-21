@@ -1,37 +1,36 @@
-// app/dashboard/page.jsx
+"use client"
+import React, { useEffect } from 'react'
+import { getFirestore,doc, getDoc } from "firebase/firestore";
+import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
+import { app } from './confing/FirebaseConfing'
 
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { redirect } from "next/navigation";
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+function Dashboard() {
+  const {user} = useKindeBrowserClient()
+  const db = getFirestore(app);
 
-export default async function Dashboard() {
-  const { isAuthenticated } = getKindeServerSession();
-
-  const ok = await isAuthenticated();
-
-  if (!ok) {
-    redirect("/api/auth/login?post_login_redirect_url=/dashboard");
+  useEffect(() => {
+  if (user?.email) {
+    MeetingRegistered();
   }
+}, [user]);
 
+  const MeetingRegistered= async()=>{
+
+const docRef = doc(db, "Meeting",user?.email );
+const docSnap = await getDoc(docRef);
+
+if (docSnap.exists()) {
+  console.log("Document data:", docSnap.data());
+} else {
+  // docSnap.data() will be undefined in this case
+  console.log("No such document!");
+}
+  }
   return (
     <div>
-      Dashboard
-      <LogoutLink>Logout</LogoutLink>
-    </div>
-  );
+      dashboard
+</div>
+  )
 }
 
-
-// // "use client";
-// import React from 'react'
-// import {LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components"
-
-// const Dashboard = () => {
-//   return (
-//     <div>Dashboard
-//       <LogoutLink>Logout</LogoutLink>
-//     </div>
-//   )
-// }
-
-// export default Dashboard
+export default Dashboard
