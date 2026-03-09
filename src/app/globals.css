@@ -1,3 +1,5 @@
+@import "react-day-picker/style.css";
+
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -112,6 +114,26 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* ensure daypicker months don't force overflow (adjust widths) */
+.rdp .rdp-months {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.75rem;
+  align-items: flex-start;
+  flex-wrap: nowrap; /* keep months in single row when numberOfMonths=1 this is safe */
+}
+
+.rdp .rdp-month {
+  min-width: 260px; /* ensure calendar month has a reasonable min width */
+  box-sizing: border-box;
+}
+
+/* make sure calendar doesn't use absolute positioning that could overlap siblings */
+.rdp {
+  max-width: 100%;
+  overflow: visible;
 }
 
 @layer base {

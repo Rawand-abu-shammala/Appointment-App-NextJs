@@ -1,0 +1,72 @@
+
+app/
+└── (modules)/
+    └── [meeting]/
+        ├── [eventId]/
+        │   └── page.js
+        │
+        ├── index.js
+        │
+        ├── hooks/
+        │   └── useMeetingPage.js
+        │
+        └── _components/
+            ├── DateTimeComponent.js
+            ├── MeetingDataTime.js
+            └── UserForm.js
+```
+
+---
+
+# `app/(modules)/[meeting]/[eventId]/page.js`
+
+```javascript
+
+```
+
+---
+
+# `app/(modules)/[meeting]/index.js`
+
+```javascript
+
+```
+
+---
+
+# `app/(modules)/[meeting]/hooks/useMeetingPage.js`
+
+```javascript
+
+```
+
+---
+
+# `app/(modules)/[meeting]/_components/MeetingDataTime.js`
+
+```javascript
+
+```
+
+---
+
+# `app/(modules)/[meeting]/_components/DateTimeComponent.js`
+
+```javascript
+
+```
+
+---
+
+# `app/(modules)/[meeting]/_components/UserForm.js`
+
+```javascript
+
+```
+
+---
+
+إذا حابة أعمل لك نسخة ZIP جاهزة تحتوي هذه الملفات (مضمونة في نفس الستركشر)، قولي "أعطني zip" وسأنشئه وأرفع رابط تنزيل.
+أو لو بدك أي فصل إضافي للـ logic (مثلاً نقل `createTimeSlot` أو `handleScheduledMeeting` إلى hook منفصل) أقدّمه كـ refactor لكن **بس بطلب صريح منك** (حتى لا أغير سلوك الكود الأصلي).
+
+حابة أعمل لك zip أو تلصقي هذا مباشرة في المشروع الآن؟
